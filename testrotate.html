@@ -1,0 +1,11 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript">
+var rotate = 0;
+$(document).ready(function() {
+  $(document).on("keydown", function() {
+    rotate += 30;
+    $(".pacman")[0].style.transform = `rotate(${rotate}deg)`;
+  });
+});
+</script>
+<img src="pacman.png" class="pacman">

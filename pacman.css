@@ -1,0 +1,62 @@
+body {
+  margin: 0px;
+  background-color: black;
+  line-height: 0px;
+}
+
+div {
+  margin: 0px;
+  padding: 0px;
+}
+
+.row {
+  display: block;
+  margin: 0px;
+  padding: 0px;
+}
+
+.row div{
+  display:inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+.coin {
+  background: url("dot.jpg");
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+}
+
+.pacman {
+  width: 20px;
+  height: 20px;
+}
+
+.ghost {
+  background: url("ghost.png");
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+}
+
+.brick {
+  background-color: blue;
+}
+
+.error {
+  background-color: red;
+}
+
+#score {
+  color: white;
+}
+#score p {
+  color: red;
+}
+
+#reset {
+  display: block;
+  padding-top: 20px;
+  color: white;
+}
