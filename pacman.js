@@ -1,10 +1,16 @@
+const MAX_X = 30;
+const MAX_Y = 30;
+const TURNS_PER_GHOST_MOVE = 2;
+const BLOCK = 'b';
+const DOT = '1';
+const CHERRY = '5';
+const GHOST = 'g';
+const PAC = 'p;'
+
 var world = [];
 var turns = 0;
 var gameOver = false;
 var rotation = 0;
-var MAX_X = 30;
-var MAX_Y = 30;
-var TURNS_PER_GHOST_MOVE = 2;
 for(var i = 0; i<MAX_Y; i++) {
   world.push([]);
 }
@@ -38,7 +44,7 @@ function spawnGhosts() {
       x: Math.floor(Math.random()*(MAX_X-2))+1,
       y: Math.floor(Math.random()*(MAX_Y-2))+1,
       moved: false
-    })
+    });
   }
 }
 
@@ -164,7 +170,7 @@ function move(direction, ghost) {
 
   else {
     //replace destination with ghost
-    if(world[desty][destx] == 1) {
+    if(world[desty][destx] == DOT) {
       world[desty][destx] = 'G';
     }
     else if(world[desty][destx] == 0){
@@ -172,7 +178,7 @@ function move(direction, ghost) {
     }
 
     if(onCoin) {
-      world[ghost.y][ghost.x] = 1;
+      world[ghost.y][ghost.x] = DOT;
     }
     else {
       world[ghost.y][ghost.x] = 0;
@@ -234,11 +240,11 @@ function playerMove(e) {
   else if (e.keyCode == 40) {
     //DOWN
     rotation = 90;
-    if(world[pacman.y+1][pacman.x] != 2) {
-      if(world[pacman.y+1][pacman.x] == 1) {
+    if(world[pacman.y+1][pacman.x] != BLOCK) {
+      if(world[pacman.y+1][pacman.x] == DOT) {
         score += 10;
       }
-      world[pacman.y][pacman.x] = 0;
+      world[pacman.y][pacman.x] = DOT;
       world[pacman.y+1][pacman.x] = 'p';
       pacman.y++;
     }

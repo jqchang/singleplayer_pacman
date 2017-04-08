@@ -1,0 +1,29 @@
+1) Add cherries (50pt)
+  - Change grid & ghost architecture to use string size for layers
+  - '1' for dot -- [1] is undefined, so normal
+  - '1g' for dot+ghost
+  - '11' for cherry (double stack);
+  - b for brick? # for point value?
+  - Alternatively, separate layers? map+items+units?
+
+map architecture:
+X by Y map, 2d array of strings (so, 2.5d layering)
+b = block
+numbers = dots/consumables, points X number
+for now - 1 = dot, 5 = CHERRY
+
+map generation order:
+1) randomize blocking (b, 0)
+  nested for loop
+    enforce boundaries
+3) add items (1, 5)
+4) add units (p, g)
+
+update grid:
+  display div of world[y][x][length-1];
+
+game cycle:
+  valid input
+    player phase
+    enemy phase
+    update grid
